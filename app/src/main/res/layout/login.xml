@@ -61,14 +61,15 @@
         android:id="@+id/history"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="188dp"
         android:background="#786345"
-        android:text="HISTORY"
+        android:onClick="historyBottle"
+        android:text="Previous"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         android:typeface="monospace"
-        android:onClick="historyBottle"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/write" />
 </androidx.constraintlayout.widget.ConstraintLayout>
