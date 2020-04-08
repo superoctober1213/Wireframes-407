@@ -19,12 +19,13 @@
         app:srcCompat="@drawable/bottle" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/context"
         android:layout_width="324dp"
         android:layout_height="147dp"
         android:layout_marginTop="20dp"
         android:background="#FFFCED"
         android:ems="10"
+        android:maxLength="50"
         android:gravity="start|top"
         android:hint="Write your message here!"
         android:inputType="textMultiLine"
@@ -34,7 +35,6 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
-        android:id="@+id/button"
         android:layout_width="161dp"
         android:layout_height="43dp"
         android:layout_marginTop="40dp"
@@ -46,5 +46,17 @@
         android:typeface="sans"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/context" />
+
+    <TextView
+        android:id="@+id/Maxhint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Maximum input: 50 words"
+        app:layout_constraintBottom_toBottomOf="@+id/context"
+        app:layout_constraintEnd_toEndOf="@+id/context"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toStartOf="@+id/context"
+        app:layout_constraintTop_toTopOf="@+id/context"
+        app:layout_constraintVertical_bias="0.906" />
 </androidx.constraintlayout.widget.ConstraintLayout>
