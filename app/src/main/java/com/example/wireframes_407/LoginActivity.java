@@ -31,4 +31,9 @@ public class LoginActivity extends AppCompatActivity {
         Intent write = new Intent(this, ThrowBottle.class);
         startActivity(write);
     }
+
+    public void historyBottle(View view){
+        Intent history = new Intent(this, HistoryBottle.class);
+        startActivity(history);
+    }
 }
