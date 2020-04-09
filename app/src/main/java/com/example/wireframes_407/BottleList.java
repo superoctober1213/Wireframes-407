@@ -1,31 +1,36 @@
 package com.example.wireframes_407;
 
-public class Bottlecontent {
+/**
+ * construct different variable type.
+ */
+
+public class BottleList {
     private String usernameF; //The username of who create the bottle
     private String usernameR; // The username of who read the bottle
     private String date;
     private String gender;
     private String content;
-    private String usernameC; // The username of who comment the bottle
+    private Integer bottleID;
 
 
-    public Bottlecontent(String usernameF, String usernameR, String date, String gender, String content, String usernameC) {
+    public BottleList(String usernameF, String date, String gender, String usernameR,
+                            int bottleID) {
         this.usernameF = usernameF;
-        this.content = content;
+        //this.content = content;
         this.date = date;
         this.gender = gender;
-        this.content = content;
+        //this.content = content;
         this.usernameR = usernameR;
-        this.usernameC = usernameC;
+        //this.usernameC = usernameC;
+        this.bottleID = bottleID;
+        //this.commentID = commentID;
     }
+
 
     public String getUsernameF() {
         return usernameF;
     }
 
-    public String getUsernameC() {
-        return usernameC;
-    }
 
     public String getUsernameR() {
         return usernameR;
@@ -42,4 +47,11 @@ public class Bottlecontent {
     public String getContent() {
         return content;
     }
+
+    public int getBottleID() {
+        return bottleID;
+    }
+
+
 }
+
