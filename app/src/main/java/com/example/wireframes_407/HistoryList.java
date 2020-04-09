@@ -1,6 +1,6 @@
 package com.example.wireframes_407;
 
-public class History {
+public class HistoryList {
 
     private String usernameF; //The username of who create the bottle
     private String date;
@@ -8,18 +8,15 @@ public class History {
     private String content;
     private String usernameC; // The username of who comment the bottle
     private int bottleID;
-    private int commentID;
 
-    public History(String usernameF, String date, String gender, String content, String usernameC,
-                   int bottleID, int commentID) {
+    public HistoryList(String usernameF, String date, String gender, String content, String usernameC,
+                       int bottleID) {
         this.usernameF = usernameF;
         this.content = content;
         this.date = date;
         this.gender = gender;
-        this.content = content;
         this.usernameC = usernameC;
         this.bottleID = bottleID;
-        this.commentID = commentID;
     }
 
 
@@ -47,9 +44,6 @@ public class History {
         return bottleID;
     }
 
-    public int getCommentID() {
-        return commentID;
-    }
 }
 
 
