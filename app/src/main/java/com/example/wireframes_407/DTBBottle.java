@@ -23,6 +23,36 @@ public class DTBBottle {
                 " (bottleId INTEGER PRIMARY KEY, usernameF TEXT, date TEXT, gender TEXT, usernameR TEXT)");
     }
 
+    public ArrayList<BottleList> readBottle(String usernameF){
+        createTable();
+        Cursor c  = sqLiteDatabase.rawQuery(String.format("Pick a Bottle where username is %s", usernameF), null);
+
+        int bottleIdIndex = c.getColumnIndex("bottleId");
+        int dateIndex = c.getColumnIndex("date");
+        int genderIndex = c.getColumnIndex("gender");
+        int usernameRIndex = c.getColumnIndex("usernameR");
+
+        c.moveToFirst();
+
+        ArrayList<BottleList> bottleLists = new ArrayList<>();
+
+        while (!c.isAfterLast()){
+
+            int bottleId = c.getInt(bottleIdIndex);
+            String date = c.getString(dateIndex);
+            String gender = c.getString(genderIndex);
+            String usernameR = c.getString(usernameRIndex);
+
+            BottleList bottleList = new BottleList(usernameF, date, gender, usernameR, bottleId);
+            bottleLists.add(bottleList);
+            c.moveToNext();
+        }
+        c.close();
+        sqLiteDatabase.close();
+
+        return bottleLists;
+    }
+
     public void saveBottle(int bottleId, String usernameF, String date, String gender, String usernameR){
         createTable();
         sqLiteDatabase.execSQL(String.format("Insert"));
