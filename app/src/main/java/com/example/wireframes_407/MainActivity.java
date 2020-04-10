@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -19,30 +21,34 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     EditText editUser;
     EditText editCode;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        firebaseAuth = FirebaseAuth.getInstance();
         editUser = findViewById(R.id.user);
         editCode = findViewById(R.id.code);
     }
 
+
     public void clickLogin(View v) {
-        String email = editUser.getText().toString();
-        String password = editCode.getText().toString();
-        firebaseAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
+        String current_user = editUser.getText().toString();
+        String current_code = editCode.getText().toString();
+        try {
+            firebaseAuth.signInWithEmailAndPassword(current_user,
+                    current_code)
+                    .addOnCompleteListener((task) -> {
+                        if (task.isSuccessful()) {
                             startActivity(new Intent(MainActivity.this, LoginActivity.class));
                         } else {
                             Toast.makeText(MainActivity.this, task.getException().getMessage(),
                                     Toast.LENGTH_SHORT).show();
                         }
-                    }
-                });
+                    });
+        } catch(Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     public void clickSignup(View v) {

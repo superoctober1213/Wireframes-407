@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "259431659223",
+    "firebase_url": "https://wireframes-407.firebaseio.com",
+    "project_id": "wireframes-407",
+    "storage_bucket": "wireframes-407.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259431659223:android:00c62f762590503ee3a292",
+        "android_client_info": {
+          "package_name": "com.example.wireframes_407"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "259431659223-0jvts9s6j732ufng179lrindeapajlo2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjAP1xazcsqnWFIHijMpUgOSK2E-XcsPg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "259431659223-0jvts9s6j732ufng179lrindeapajlo2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

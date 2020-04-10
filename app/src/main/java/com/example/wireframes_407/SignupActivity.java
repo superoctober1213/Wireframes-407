@@ -16,7 +16,6 @@ public class SignupActivity extends AppCompatActivity {
     EditText email;
     EditText password;
     Button signup;
-    Button login;
     ProgressBar pbar;
     FirebaseAuth firebaseAuth;
     Button back;
@@ -28,7 +27,6 @@ public class SignupActivity extends AppCompatActivity {
         email = findViewById(R.id.etEmail);
         password = findViewById(R.id.etPassword);
         signup = findViewById(R.id.btnSignup);
-        login = findViewById(R.id.login);
         pbar = findViewById(R.id.progressBar);
         back = findViewById(R.id.btnBack);
         pbar.setVisibility(View.GONE);
@@ -36,7 +34,13 @@ public class SignupActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        signup.setOnClickListener((view) -> {
+    }
+
+    public void clickBack(View v) {
+        startActivity(new Intent(SignupActivity.this, MainActivity.class));
+    }
+    public void clickSignup(View v) {
+        try {
             pbar.setVisibility(View.VISIBLE);
             firebaseAuth.createUserWithEmailAndPassword(email.getText().toString(),
                     password.getText().toString())
@@ -54,18 +58,8 @@ public class SignupActivity extends AppCompatActivity {
                         }
 
                     });
-        });
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(SignupActivity.this, MainActivity.class));
-            }
-        });
-
-
-
-
+        } catch(Exception ex) {
+            ex.printStackTrace();
+        }
     }
 }
