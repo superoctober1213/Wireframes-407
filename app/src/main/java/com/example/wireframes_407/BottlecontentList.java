@@ -1,16 +1,19 @@
 package com.example.wireframes_407;
 
-public class HistoryList {
+/**
+ * This file is use to
+ */
+public class BottlecontentList {
 
     private String usernameF; //The username of who create the bottle
-    private String date;
-    private String gender;
-    private String content;
+    private String date; // The date create bottle and comment
+    private String gender; // The gender of the user
+    private String content; // The context write by the first owner of the bottle
     private String usernameC; // The username of who comment the bottle
     private int bottleID;
 
-    public HistoryList(String usernameF, String date, String gender, String content, String usernameC,
-                       int bottleID) {
+    public BottlecontentList(String usernameF, String date, String gender, String content, String usernameC,
+                             int bottleID) {
         this.usernameF = usernameF;
         this.content = content;
         this.date = date;

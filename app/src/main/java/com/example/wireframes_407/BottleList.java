@@ -1,7 +1,9 @@
 package com.example.wireframes_407;
 
 /**
+ * This file using to store the information we need for Bottle history
  * construct different variable type.
+ *
  */
 
 public class BottleList {
@@ -9,12 +11,12 @@ public class BottleList {
     private String usernameR; // The username of who read the bottle
     private String date;
     private String gender;
-    private String content;
+    //private String content;
     private Integer bottleID;
 
 
     public BottleList(String usernameF, String date, String gender, String usernameR,
-                            int bottleID) {
+                      int bottleID) {
         this.usernameF = usernameF;
         //this.content = content;
         this.date = date;
@@ -44,9 +46,9 @@ public class BottleList {
         return gender;
     }
 
-    public String getContent() {
-        return content;
-    }
+//    public String getContent() {
+//        return content;
+//    }
 
     public int getBottleID() {
         return bottleID;
