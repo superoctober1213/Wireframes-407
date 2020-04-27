@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "259431659223",
-    "firebase_url": "https://wireframes-407.firebaseio.com",
-    "project_id": "wireframes-407",
-    "storage_bucket": "wireframes-407.appspot.com"
+    "project_number": "937953319571",
+    "firebase_url": "https://wireframes-407-7c82a.firebaseio.com",
+    "project_id": "wireframes-407-7c82a",
+    "storage_bucket": "wireframes-407-7c82a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:259431659223:android:00c62f762590503ee3a292",
+        "mobilesdk_app_id": "1:937953319571:android:6dc9b180ca18225c294b66",
         "android_client_info": {
           "package_name": "com.example.wireframes_407"
         }
       },
       "oauth_client": [
         {
-          "client_id": "259431659223-0jvts9s6j732ufng179lrindeapajlo2.apps.googleusercontent.com",
+          "client_id": "937953319571-vta718nic5p2nqkvps2vlbpnsi3bkahv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.wireframes_407",
+            "certificate_hash": "9d031057ebe35d83b1a944d67b3cdc5217cc8f1a"
+          }
+        },
+        {
+          "client_id": "937953319571-fv8ogggncn9ulgtenml9lbatr1viq2du.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCjAP1xazcsqnWFIHijMpUgOSK2E-XcsPg"
+          "current_key": "AIzaSyCRMrja2s5K3tRkzKa96HJ4NH7DHLqMiKU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "259431659223-0jvts9s6j732ufng179lrindeapajlo2.apps.googleusercontent.com",
+              "client_id": "937953319571-fv8ogggncn9ulgtenml9lbatr1viq2du.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
