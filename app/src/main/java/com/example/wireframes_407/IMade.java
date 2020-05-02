@@ -17,11 +17,10 @@ public class IMade extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_i_made);
 
-        textView = findViewById(R.id.imade);
-        String currentusername = MainActivity.getUsername();
-        ArrayList<Readhistory> bottleList = DTBReadhistory.getHistoryByUsernameF(currentusername);
+//        textView = findViewById(R.id.imade);
+//        String currentusername = MainActivity.getUsername();
+//        ArrayList<Readhistory> bottleList = DTBReadhistory.getHistoryByUsernameF(currentusername);
 
-        
 
 
 
