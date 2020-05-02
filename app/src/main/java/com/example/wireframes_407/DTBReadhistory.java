@@ -19,6 +19,12 @@ public class DTBReadhistory {
 
     }
 
+    /**
+     * count the time the bottle have be read
+     * Check the history record of the bottle read
+     * @param ID
+     * @return
+     */
     public ArrayList<Readhistory> getHistoryByBottleID(int ID) {
         createTable();
 
@@ -50,6 +56,11 @@ public class DTBReadhistory {
         return readhistories;
     }
 
+    /**
+     * Check the bottle you have read before;
+     * @param usernameF
+     * @return
+     */
     public ArrayList<Readhistory> getHistoryByUsernameR(String usernameF) {
         createTable();
 

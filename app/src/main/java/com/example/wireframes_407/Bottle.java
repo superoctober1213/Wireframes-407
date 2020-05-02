@@ -12,7 +12,6 @@ import java.text.SimpleDateFormat;
 
 public class Bottle {
     private String usernameF; //The username of who create the bottle
-    //private String usernameR; // The username of who read the bottle
     private java.sql.Timestamp dateF; //The datebottle create
     private String genderF;           // The usernameF's gender
     private String content;           // The original content of the bottle

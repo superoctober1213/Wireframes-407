@@ -8,9 +8,9 @@ public class Readhistory {
     private Timestamp time;
 
     public Readhistory(String usernameR, int bottleID, Timestamp time) {
-        this.usernameR = usernameR;
-        this.bottleID = bottleID;
-        this.time = time;
+        this.usernameR = usernameR; //The username of user who read this bottle
+        this.bottleID = bottleID; //Define the bottle
+        this.time = time; //The time that the user read(Sort)
     }
 
     public String getUsernameR() {return usernameR;}

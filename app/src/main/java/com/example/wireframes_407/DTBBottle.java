@@ -27,7 +27,7 @@ public class DTBBottle {
 
 
     /**
-     * The information for save the bottle that the usersend before.
+     * Check the history bottle current user made.
      *
      * @param Username: The currently user's username.
      * @return
@@ -68,10 +68,6 @@ public class DTBBottle {
         return bottleMade;
     }
 
-    public ArrayList<Bottle> Viewbottle(int BottleID) {
-        createTable();
-        return null;
-    }
 
     public void ThrowBottle(String usernameF, Timestamp dateF, String genderF, String content) {
         createTable();
@@ -155,5 +151,5 @@ public class DTBBottle {
 
     }
 
-    }
+}
 

@@ -1,12 +1,13 @@
 package com.example.wireframes_407;
 import java.sql.Timestamp;
 public class Comment {
-    private int bottleID;
-    private Timestamp dateC;
-    private int commentID;
-    private String comment;
-    private String genderC;
-    private String usernameC;
+
+    private int bottleID; //Define the bottle
+    private Timestamp dateC; //When does the comment create
+    private int commentID; //Define comment(key)
+    private String comment; //context of the comment
+    private String genderC; //The gender of the user who wrote this comment
+    private String usernameC; //The username of the user who wrote this comment
 
     public Comment(int bottleID, Timestamp dateC, int commentID, String comment, String genderC, String usernameC) {
         this.bottleID = bottleID;
