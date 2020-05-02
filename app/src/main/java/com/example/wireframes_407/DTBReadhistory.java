@@ -6,16 +6,17 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 
 public class DTBReadhistory {
-    SQLiteDatabase sqLiteDatabase;
+    private static SQLiteDatabase sqLiteDatabase;
+
 
     public void DTBBottle(SQLiteDatabase sqLiteDatabase) {
 
         this.sqLiteDatabase = sqLiteDatabase;
     }
 
-    public void createTable() {
+    public static void createTable() {
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS ReadhistoryDTB"  +
-                " (historyId INTEGER PRIMARY KEY, usernameR TEXT, bottleID INTEGER, time DATE)");
+                " (historyId INTEGER PRIMARY KEY, usernameR TEXT, bottleID INTEGER, time DATE, UsernameF TEXT)");
 
     }
 
@@ -25,15 +26,16 @@ public class DTBReadhistory {
      * @param ID
      * @return
      */
-    public ArrayList<Readhistory> getHistoryByBottleID(int ID) {
+    public static ArrayList<Readhistory> getHistoryByUsernameF(String username) {
         createTable();
 
-        String q1 = "SELECT * FROM ReadhistoryDTB WHERE bottleID = this.ID";
+        String q1 = "SELECT * FROM ReadhistoryDTB WHERE usernameF = username";
         Cursor s = sqLiteDatabase.rawQuery(q1, null);
 
         int bottleIDIndex = s.getColumnIndex("bottleID");
         int timeIndex = s.getColumnIndex("time");
         int usernameRIndex = s.getColumnIndex("usernameR");
+        int usernameFIndex = s.getColumnIndex("usernameF");
 
         s.moveToFirst();
 
@@ -44,9 +46,10 @@ public class DTBReadhistory {
             int bottleID = s.getInt(bottleIDIndex);
             Timestamp time = Timestamp.valueOf(s.getString(timeIndex));
             String usernameR = s.getString(usernameRIndex);
+            String usernameF = s.getString(usernameFIndex);
 
             // The ArrayList to save the information to return;
-            Readhistory readhistory = new Readhistory(usernameR, bottleID, time);
+            Readhistory readhistory = new Readhistory(usernameR, bottleID, time, usernameF);
             readhistories.add(readhistory);
             s.moveToNext();
         }
@@ -58,10 +61,10 @@ public class DTBReadhistory {
 
     /**
      * Check the bottle you have read before;
-     * @param usernameF
+     * @param username
      * @return
      */
-    public ArrayList<Readhistory> getHistoryByUsernameR(String usernameF) {
+    public static ArrayList<Readhistory> getHistoryByUsernameR(String username) {
         createTable();
 
         String q1 = "SELECT * FROM ReadhistoryDTB WHERE usernameR = usernameF";
@@ -70,6 +73,7 @@ public class DTBReadhistory {
         int bottleIDIndex = s.getColumnIndex("bottleID");
         int timeIndex = s.getColumnIndex("time");
         int usernameRIndex = s.getColumnIndex("usernameR");
+        int usernameFIndex = s.getColumnIndex("usernameF");
 
         s.moveToFirst();
 
@@ -80,9 +84,10 @@ public class DTBReadhistory {
             int bottleId = s.getInt(bottleIDIndex);
             Timestamp time = Timestamp.valueOf(s.getString(timeIndex));
             String usernameR = s.getString(usernameRIndex);
+            String usernameF = s.getString(usernameFIndex);
 
             // The ArrayList to save the information to return;
-            Readhistory readhistory = new Readhistory(usernameR, bottleId, time);
+            Readhistory readhistory = new Readhistory(usernameR, bottleId, time,usernameF);
             readhistories.add(readhistory);
             s.moveToNext();
         }
