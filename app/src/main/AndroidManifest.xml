@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ThrowBottle"></activity>
+        <activity android:name=".HistoryBottle" />
+        <activity android:name=".ThrowBottle" />
         <activity android:name=".PickBottle" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignupActivity" />

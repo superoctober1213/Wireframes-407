@@ -15,8 +15,6 @@ public class PickBottle extends AppCompatActivity {
         content = findViewById(R.id.context);
     }
 
-    public void ClickfuntionThrow(View view) {
-        String context = content.getText().toString();
 
-    }
+
 }

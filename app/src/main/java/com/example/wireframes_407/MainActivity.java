@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editUser;
     EditText editCode;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         editUser = findViewById(R.id.user);
         editCode = findViewById(R.id.code);
+
     }
 
 
@@ -55,13 +58,23 @@ public class MainActivity extends AppCompatActivity {
     public void clickSignup(View v) {
         startActivity(new Intent(MainActivity.this,SignupActivity.class));
     }
-    public FirebaseUser getUser() {
+    public static String getUsername(){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             return null;
         } else {
-            return user;
+            return user.getDisplayName();
         }
+    }
+
+    public static String getGender() {
+        FirebaseUser gender = FirebaseAuth.getInstance().getCurrentUser();
+        if (gender != null) {
+            return null;
+        } else {
+            return gender.getPhotoUrl().toString();
+        }
+
     }
 
 

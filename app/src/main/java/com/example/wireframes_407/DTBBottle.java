@@ -2,8 +2,10 @@ package com.example.wireframes_407;
 
 import java.sql.Timestamp;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
+import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * Save the list of the bottle.
@@ -13,17 +15,18 @@ import java.util.ArrayList;
  */
 public class DTBBottle {
 
-    SQLiteDatabase sqLiteDatabase;
+    private static SQLiteDatabase sqLiteDatabase;
 
     public void DTBBottle(SQLiteDatabase sqLiteDatabase) {
 
         this.sqLiteDatabase = sqLiteDatabase;
     }
 
-    public void createTable() {
+    public static void createTable() {
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS BottleDTB" +
                 " (bottleId INTEGER PRIMARY KEY, usernameF TEXT, date DATETIME, gender TEXT, usernameR TEXT, content TEXT)");
     }
+
 
 
     /**
@@ -69,19 +72,27 @@ public class DTBBottle {
     }
 
 
-    public void ThrowBottle(String usernameF, Timestamp dateF, String genderF, String content) {
+    public static void throwBottle(String usernameF, Timestamp dateF, String genderF, String content) {
         createTable();
         String sql ="INSERT INTO BottleDTB(usernameF, dateF, genderF, content, bottleID) VALUES('%s','%s''%s''%s')";
         sqLiteDatabase.execSQL(String.format(sql,
                 usernameF,dateF, genderF, content));
     }
 
+//    public long getProfilesCount() {
+//
+//        SQLiteDatabase db = this.getReadableDatabase();
+//        long count = DatabaseUtils.queryNumEntries(db, "BottleDTB");
+//        db.close();
+//        return count;
+//    }
+
     /**
      * The function with pick bottle
      * @param id: A random number to select;
      * @return
      */
-    public ArrayList<Bottle> Pickbottle(int id) {
+    public static ArrayList<Bottle> Pickbottle(int id) {
         createTable();
         String sql = "SELECT * FROM BottleDTB WHERE BottleID = id";
         Cursor s = sqLiteDatabase.rawQuery(sql,null);
@@ -150,6 +161,8 @@ public class DTBBottle {
         return bottleMade;
 
     }
+
+
 
 }
 
