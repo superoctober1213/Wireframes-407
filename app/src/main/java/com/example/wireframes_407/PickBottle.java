@@ -15,6 +15,4 @@ public class PickBottle extends AppCompatActivity {
         content = findViewById(R.id.context);
     }
 
-
-
 }

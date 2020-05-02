@@ -26,15 +26,15 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void pickBottle(View view){
-        int index = 0;
+//        int index = 0;
         
         Intent pick = new Intent (this, PickBottle.class);
-        ArrayList<Bottle> bottle = DTBBottle.Pickbottle(index);
-        Bottle bottleget = bottle.get(0);
-        Timestamp date = bottleget.getDateF();
-        String usernameF = bottleget.getUsernameF();
-        String genderF = bottleget.getGenderF();
-        String content = bottleget.getContent();
+//        ArrayList<Bottle> bottle = DTBBottle.Pickbottle(index);
+//        Bottle bottleget = bottle.get(0);
+//        Timestamp date = bottleget.getDateF();
+//        String usernameF = bottleget.getUsernameF();
+//        String genderF = bottleget.getGenderF();
+//        String content = bottleget.getContent();
 
 
         startActivity(pick);
