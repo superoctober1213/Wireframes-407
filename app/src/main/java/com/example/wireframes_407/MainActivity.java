@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
@@ -53,6 +54,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickSignup(View v) {
         startActivity(new Intent(MainActivity.this,SignupActivity.class));
+    }
+    public FirebaseUser getUser() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            return null;
+        } else {
+            return user;
+        }
     }
 
 
