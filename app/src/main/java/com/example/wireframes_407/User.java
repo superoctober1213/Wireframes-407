@@ -2,20 +2,16 @@ package com.example.wireframes_407;
 
 public class User {
 
-        private int id;
         private String username;
-        private String sex;
+        private String gender;
+        private String email;
 
-        public User(String username, String sex) {
+        public User(String email, String username, String gender) {
             this.username = username;
-            this.sex = sex;
+            this.gender = gender;
+            this.email = email;
         }
-        public int getId() {
-            return id;
-        }
-        public void setId(int id) {
-            this.id = id;
-        }
+
         public String getUsername() {
             return username;
         }
@@ -24,10 +20,10 @@ public class User {
         }
 
         public String getSex() {
-            return sex;
+            return gender;
         }
         public void setSex(String sex) {
-            this.sex = sex;
+            this.gender = gender;
         }
 //        @Override
 //        public String toString() {

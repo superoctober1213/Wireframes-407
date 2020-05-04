@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
     public void clickSignup(View v) {
         startActivity(new Intent(MainActivity.this,SignupActivity.class));
     }
+
     public static String getUsername(){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {

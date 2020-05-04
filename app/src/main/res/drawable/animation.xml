@@ -2,15 +2,15 @@
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@drawable/bottle"
           android:duration="200"/>
-    <item android:drawable="@drawable/bottle-2"
+    <item android:drawable="@drawable/bottle"
         android:duration="200"/>
-    <item android:drawable="@drawable/bottle-3"
+    <item android:drawable="@drawable/bottle"
         android:duration="200"/>
-    <item android:drawable="@drawable/bottle-4"
+    <item android:drawable="@drawable/bottle"
         android:duration="200"/>
-    <item android:drawable="@drawable/bottle-5"
+    <item android:drawable="@drawable/bottle"
         android:duration="200"/>
-    <item android:drawable="@drawable/bottle-6"
+    <item android:drawable="@drawable/bottle"
         android:duration="2000"/>
 
 </animation-list>
